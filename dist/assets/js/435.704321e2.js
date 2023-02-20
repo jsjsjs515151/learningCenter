@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmy_app"]=self["webpackChunkmy_app"]||[]).push([[435],{4435:function(n,u,t){t.r(u),t.d(u,{default:function(){return f}});var r=function(){var n=this;n._self._c;return n._m(0)},e=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("我是页面1")])])}],l={data(){return{}}},a=l,s=t(1001),c=(0,s.Z)(a,r,e,!1,null,null,null),f=c.exports}}]);
