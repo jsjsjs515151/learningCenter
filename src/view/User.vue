@@ -6,7 +6,7 @@
         :before-close="handleClose"
         width="50%"
         >
-            <el-form :inline="true" ref="form" :model="form" label-width="80px">
+            <el-form :inline="true" :rules="rules" ref="form" :model="form" label-width="80px">
                 <el-form-item label="姓名" prop="name">
                     <el-input placeholder="请输入姓名" v-model="form.name"></el-input>
                 </el-form-item>
@@ -191,13 +191,15 @@ import {getUser,addUser, editUser, delUser} from '../api/index'
                                 cancelButtonText: '取消',
                                 type: 'warning'
                             }).then(() => {
+                                let that = this
                                 delUser({id:row.id}).then(()=>{
                                     this.$message({
                                         type: 'success',
                                         message: '删除成功!'
                                     });
+                                    that.getList()
                                 })
-                                this.getList()
+                                
                             }).catch(() => {
                                 this.$message({
                                     type: 'info',

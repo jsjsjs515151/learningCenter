@@ -15,10 +15,11 @@
                             <p>上次登录地点：<span>广州</span></p>
                        </div>
                     </el-card>
-                    <el-card style="margin-top: 20px;height: 320px;">
+                    <el-card style="margin-top: 10px;height: 270px;">
                         <el-table
                             :data="tableData"
-                            style="width: 100%;"
+                            style="width: 100%;
+                            height: auto;"
                             size="mini">
                                 <el-table-column  class="table-font" v-for="(val,key) in tableLabel" :prop="key" :label="val" :key="key" />
                         </el-table>
@@ -30,7 +31,7 @@
                             <i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}"></i>
                             <div class="detail">
                                 <p class="price">{{ item.value }}</p>
-                                <p>{{ item.name }}</p>
+                                <p class="desc">{{ item.name }}</p>
                             </div>
                         </el-card>
                     </div>
@@ -46,7 +47,7 @@
                             </div>
                         </el-card>
                         <el-card>
-                            <div ref="echarts3" style="height:200px">
+                            <div  ref="echarts3">
 
                             </div>
                         </el-card>
@@ -207,6 +208,9 @@
                     }
                     echarts2.setOption(echarts2Option)
                     const echarts3 = echarts.init(this.$refs.echarts3)
+                    echarts3.resize({
+                        height:150
+                    })
                     const echarts3Option = {
                         tooltip: {
                             trigger: "item",
@@ -249,6 +253,10 @@
 </script>
 
 <style lang="less" scoped>
+
+ .el-card__body{
+    padding: 10px;
+ }
     .user {
         padding-bottom: 20px;
         margin-bottom: 20px;
@@ -288,12 +296,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .icon {
-        width: 60px;
-        height: 60px;
+        width: 42px;
+        height: 42px;
         font-size: 20px;
         color: white;
         text-align: center;
-        line-height: 60px;
+        line-height: 42px;
     }
     .detail {
         display: flex;
@@ -301,13 +309,13 @@
         justify-content: center;
         margin-left: 15px;
         .price {
-            font-size: 20px;
+            font-size: 16px;
             margin-bottom: 10px;
-            line-height: 20px;
-            height: 20px;
+            line-height: 16px;
+            height: 16px;
         }
         .desc {
-            font-size: 14px;
+            font-size: 12px;
             color: #999;
             text-align: center;
         }
@@ -323,12 +331,12 @@
     justify-content: space-between;
     .el-card {
         width: 48%;
-        height: 260px;
+        height: 170px;
         padding: 0;
 
         div {
             margin: 0;
-            height: 260px;
+            height: 170px;
         }
     }
 }  

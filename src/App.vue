@@ -19,4 +19,7 @@ export default {
     margin: 0;
     padding: 0;
   }
+  .el-main{
+    padding: 10px;
+}
 </style>

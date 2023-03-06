@@ -31,20 +31,20 @@ export default {
               url: 'User.vue'
             },
             {
-              label: '其他',
+              label: '个人中心',
               icon: 'location',
               children: [
                 {
                   path: '/page1',
                   name: 'page1',
-                  label: '页面1',
+                  label: '修改密码',
                   icon: 'setting',
                   url: 'PageOne.vue'
                 },
                 {
                   path: '/page2',
                   name: 'page2',
-                  label: '页面2',
+                  label: '个人信息',
                   icon: 'setting',
                   url: 'PageTwo.vue'
                 }
